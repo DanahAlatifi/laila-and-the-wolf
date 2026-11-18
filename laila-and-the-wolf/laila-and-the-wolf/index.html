@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16301f" />
+    <meta name="color-scheme" content="only light" />
+    <meta name="supported-color-schemes" content="light" />
+    <title>ليلى والذئب · Laila &amp; the Wolf</title>
+    <meta
+      name="description"
+      content="ليلى والذئب: كتابٌ ورقيّ دوّار في ستة فصول. Laila &amp; the Wolf: a six-chapter paper carousel book, in Arabic and English."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marhey:wght@400;600;700&family=Reem+Kufi:wght@400..700&family=Gaegu:wght@400;700&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/chrome.css" />
+    <link rel="stylesheet" href="css/cover.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/colophon.css" />
+    <link rel="stylesheet" href="css/english.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/boot/preload.js"></script>
+  </head>
+  <body>
+    <div id="stage">
+      <canvas id="gl" tabindex="0" data-ta="glLabel"></canvas>
+      <div id="still">
+        <h2 data-t="title"></h2>
+        <p data-t="still"></p>
+      </div>
+    </div>
+    <canvas id="frame" aria-hidden="true"></canvas>
+
+    <header class="chrome" id="mark"><b data-t="title"></b><span data-t="markSub"></span></header>
+    <button class="chrome" id="colo" data-ta="coloLabel">
+      <span class="string"></span><span class="tagwrap"><span class="tag" data-t="colo"></span></span>
+    </button>
+    <button id="lang" aria-label="English / عربي"><b id="langTo"></b><span id="langFrom"></span></button>
+    <div class="chrome" id="clues" role="status" data-ta="clues">
+      <small data-t="clues"></small><span class="slots"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+    <nav class="chrome" id="chap" data-ta="chapters">
+      <div id="tabs"></div>
+      <div id="chapname"></div>
+    </nav>
+    <div class="chrome" id="zoom" role="group" data-ta="zoom">
+      <button id="zout" data-ta="zoomOut">−</button>
+      <svg viewBox="0 0 16 16" aria-hidden="true">
+        <circle cx="6.5" cy="6.5" r="4.6" fill="none" stroke="currentColor" stroke-width="1.8" />
+        <path d="M10 10l4.2 4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span class="lv"><i class="on"></i><i></i><i></i></span>
+      <button id="zin" data-ta="zoomIn">+</button>
+    </div>
+    <div class="chrome" id="hint" data-t="hint"></div>
+    <div id="tip"></div>
+
+    <div id="card" aria-hidden="true">
+      <div class="scrim"></div>
+      <div class="fold" role="dialog" aria-modal="true" aria-labelledby="cardh">
+        <div class="half top"><div class="art"></div></div>
+        <div class="half bot">
+          <small id="cards"></small>
+          <h3 id="cardh"></h3>
+          <p id="cardp"></p>
+        </div>
+        <button class="x" data-ta="close">✕</button>
+      </div>
+    </div>
+
+    <div id="colophon" aria-hidden="true">
+      <button class="x2" id="colox">
+        <span class="tagwrap"><span class="tag" data-t="coloClose"></span></span>
+      </button>
+      <div class="txt">
+        <h2 data-t="coloH"></h2>
+        <div class="story" data-t="story"></div>
+        <p class="credit" data-t="co1"></p>
+        <p class="credit" data-t="co4"></p>
+      </div>
+    </div>
+    <i class="pc" id="pc1"></i><i class="pc" id="pc2"></i><i class="pc" id="pc3"></i
+    ><i class="pc" id="pc4"></i>
+
+    <div id="cover">
+      <div class="board l">
+        <div class="corner t"></div>
+        <div class="corner b"></div>
+        <div class="label">
+          <div class="k" data-t="coverK"></div>
+          <h1 data-t="title"></h1>
+          <div class="by" data-t="coverBy"></div>
+          <div class="pct"></div>
+        </div>
+        <div class="ring"></div>
+        <div class="ribbon"></div>
+        <div class="shade"></div>
+      </div>
+      <div class="board r">
+        <div class="corner t"></div>
+        <div class="corner b"></div>
+        <div class="label">
+          <div class="k" data-t="coverK"></div>
+          <h1 data-t="title"></h1>
+          <div class="by" data-t="coverBy"></div>
+          <div class="pct"></div>
+        </div>
+        <div class="ring"></div>
+        <div class="ribbon"></div>
+        <div class="shade"></div>
+      </div>
+      <div class="pop" id="pop"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <svg id="bow" viewBox="0 0 150 110" aria-hidden="true">
+        <path d="M75 52 C52 20 18 8 10 30 C4 48 30 62 75 56Z" fill="#14c4b4" />
+        <path d="M75 52 C98 20 132 8 140 30 C146 48 120 62 75 56Z" fill="#14c4b4" />
+        <path d="M75 52 C55 30 30 22 22 34 C30 30 52 38 75 55Z" fill="#0b8a80" opacity=".6" />
+        <path d="M75 52 C95 30 120 22 128 34 C120 30 98 38 75 55Z" fill="#0b8a80" opacity=".6" />
+        <path d="M70 56 L52 104 L62 98 L68 106 L76 58Z" fill="#10a99b" />
+        <path d="M80 56 L98 102 L88 97 L83 106 L74 58Z" fill="#2fd6c6" />
+        <rect x="64" y="45" width="22" height="18" rx="6" fill="#10a99b" />
+        <rect x="66" y="47" width="18" height="5" rx="2.5" fill="#fff" opacity=".25" />
+      </svg>
+      <button id="open" data-ta="openLabel">
+        <span class="tagwrap"><span class="tag" data-t="open"></span></span>
+      </button>
+      <div class="foot"><span data-t="foot"></span><br /><button id="cocred" data-t="cocred"></button></div>
+    </div>
+
+    <script src="js/boot/story.js"></script>
+    <script src="js/boot/i18n.js"></script>
+    <script src="js/boot/fallback.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+.chrome {
+  position: fixed;
+  z-index: 45;
+  opacity: 0;
+  transition: opacity 0.8s 0.2s;
+}
+html.open .chrome {
+  opacity: 1;
+}
+#mark {
+  inset-inline-start: 30px;
+  top: 22px;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(30, 10, 10, 0.25);
+}
+#mark b {
+  display: block;
+  font: 700 26px/1.1 var(--pix);
+}
+#mark b i {
+  font-style: normal;
+  color: var(--spark);
+}
+#mark span {
+  display: block;
+  font: 600 15px/1.2 var(--hand);
+  margin-top: 4px;
+  opacity: 0.92;
+}
+#colo {
+  inset-inline-end: 28px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.tag {
+  position: relative;
+  display: inline-block;
+  background: var(--cream);
+  color: var(--ink);
+  font: 600 16px/1 var(--pix);
+  padding-block: 9px 10px;
+  padding-inline: 24px 14px;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+.tag::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 10px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: #2f2420;
+  box-shadow: inset 0 0 0 1.5px rgba(0, 0, 0, 0.25);
+}
+.tagwrap {
+  display: inline-block;
+  filter: drop-shadow(0 3px 5px rgba(20, 10, 0, 0.3));
+}
+#colo .string {
+  width: 26px;
+  height: 2px;
+  background: var(--spark);
+  margin-inline-end: -3px;
+  border-radius: 2px;
+}
+html[dir='ltr'] .tag {
+  clip-path: polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%);
+}
+html[lang='en'] .tag {
+  font-weight: 500;
+  font-size: 15px;
+}
+#colo:hover .tagwrap {
+  animation: swing 0.9s cubic-bezier(0.3, 1.6, 0.4, 1);
+}
+@keyframes swing {
+  0% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(7deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#chap {
+  inset-inline-start: 30px;
+  bottom: 26px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+#tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 34px;
+}
+#tabs button {
+  width: 30px;
+  height: 24px;
+  border-radius: 5px 5px 2px 2px;
+  font: 700 13px/1 var(--pix);
+  color: rgba(255, 250, 240, 0.95);
+  position: relative;
+  transition:
+    height 0.45s cubic-bezier(0.3, 1.5, 0.4, 1),
+    transform 0.3s;
+  box-shadow:
+    inset 0 -2px 0 rgba(0, 0, 0, 0.18),
+    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+#tabs button.on {
+  height: 34px;
+}
+#tabs button.on::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: -7px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--spark);
+}
+#tabs button:hover {
+  transform: translateY(-3px);
+}
+#chapname {
+  font: 700 19px/1 var(--pix);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  padding-bottom: 4px;
+  min-width: 12ch;
+}
+#chapname small {
+  display: block;
+  font: 600 14px/1 var(--hand);
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+#zoom {
+  bottom: 24px;
+  display: flex;
+  direction: ltr;
+  align-items: center;
+  gap: 2px;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: 0 3px 8px rgba(20, 10, 0, 0.3);
+}
+html[dir='rtl'] #zoom {
+  left: 28px;
+}
+html[dir='ltr'] #zoom {
+  right: 28px;
+}
+#zoom button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font: 700 18px/1 var(--pix);
+  display: grid;
+  place-items: center;
+}
+#zoom button:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+#zoom .lv {
+  display: flex;
+  gap: 4px;
+  padding: 0 6px;
+  align-items: center;
+}
+#zoom .lv i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(42, 36, 32, 0.25);
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+#zoom .lv i.on {
+  background: var(--spark);
+  transform: scale(1.25);
+}
+#zoom svg {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+  opacity: 0.75;
+}
+#hint {
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font: 600 17px/1 var(--hand);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.8s;
+}
+html.turned #hint {
+  opacity: 0 !important;
+}
+#clues {
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(244, 236, 220, 0.94);
+  color: var(--ink);
+  padding: 6px 12px 6px 10px;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(20, 10, 0, 0.3);
+}
+#clues small {
+  font: 600 13px/1 var(--hand);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+#clues .slots {
+  display: flex;
+  gap: 4px;
+}
+#clues .slots i {
+  width: 26px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: rgba(42, 36, 32, 0.28);
+  border: 1.5px dashed rgba(42, 36, 32, 0.3);
+  border-radius: 2px;
+  transition: all 0.5s cubic-bezier(0.3, 1.6, 0.4, 1);
+}
+#clues .slots i svg {
+  width: 18px;
+  height: 14px;
+  fill: currentColor;
+}
+#clues .slots i.on {
+  color: var(--spark);
+  background: #fff6ec;
+  border: 1.5px solid var(--spark);
+  transform: translateY(-2px) rotate(-4deg);
+}
+#clues .slots i.on:nth-child(even) {
+  transform: translateY(-2px) rotate(3deg);
+}
+#clues.done {
+  box-shadow:
+    0 0 0 3px var(--spark),
+    0 3px 8px rgba(20, 10, 0, 0.3);
+  cursor: pointer;
+}
+
+#lang {
+  position: fixed;
+  z-index: 65;
+  top: 64px;
+  inset-inline-end: 28px;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 6px 14px 7px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  font:
+    700 15px/1 'Reem Kufi',
+    'Pixelify Sans',
+    sans-serif;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+#lang b {
+  font-weight: 700;
+}
+#lang span {
+  opacity: 0.45;
+  font-weight: 500;
+}
+html.colo #lang {
+  z-index: 33;
+}
+#tip {
+  position: fixed;
+  z-index: 46;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  background: var(--cream);
+  color: var(--ink);
+  font: 600 16px/1.2 var(--hand);
+  padding: 6px 10px 6px;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translate(-50%, -150%) scale(0.85);
+  transition:
+    opacity 0.2s,
+    transform 0.25s cubic-bezier(0.3, 1.6, 0.4, 1);
+  white-space: nowrap;
+}
+#tip.on {
+  opacity: 1;
+  transform: translate(-50%, -160%) scale(1);
+}
+#tip i {
+  font-style: normal;
+  color: var(--spark-d);
+  font-family: var(--pix);
+  font-size: 13px;
+  margin-inline-start: 6px;
+}

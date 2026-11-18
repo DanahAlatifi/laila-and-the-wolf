@@ -1,0 +1,356 @@
+@media (min-width: 761px) and (max-width: 1199px) {
+  #hint {
+    bottom: 88px;
+  }
+}
+@media (max-width: 760px) {
+  #lang {
+    top: 58px;
+    inset-inline-end: 16px;
+    padding: 5px 11px 6px;
+    font-size: 13px;
+  }
+  #mark {
+    inset-inline-start: 20px;
+    top: 16px;
+  }
+  #mark b {
+    font-size: 20px;
+  }
+  #mark span {
+    font-size: 13px;
+  }
+  #colo {
+    inset-inline-end: 16px;
+    top: 16px;
+  }
+  #colo .string {
+    width: 12px;
+  }
+  #clues {
+    top: auto;
+    bottom: 20px;
+    left: auto;
+    inset-inline-start: 16px;
+    transform: none;
+    padding: 5px 8px;
+  }
+  #clues small {
+    display: none;
+  }
+  #clues .slots i {
+    width: 22px;
+    height: 26px;
+    font-size: 15px;
+  }
+  #chap {
+    inset-inline-start: 18px;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  #chap {
+    bottom: 70px;
+  }
+  #chapname {
+    font-size: 16px;
+  }
+  #tabs button {
+    width: 26px;
+  }
+  html[dir='rtl'] #zoom {
+    left: 16px;
+  }
+  html[dir='ltr'] #zoom {
+    right: 16px;
+  }
+  #zoom {
+    bottom: 20px;
+  }
+  #zoom .lv {
+    display: none;
+  }
+  #hint {
+    bottom: auto;
+    top: 100px;
+    font-size: 15px;
+  }
+  html[lang='en'] .label h1 {
+    top: 58px;
+  }
+  html[lang='en'] .label .k,
+  html[lang='en'] .label .by {
+    font-size: 17px;
+  }
+  html[lang='en'] .label .by {
+    top: 118px;
+  }
+  #cover {
+    --wy: 27%;
+    --wr: 92px;
+  }
+  .label {
+    height: 204px;
+  }
+  .label .k {
+    top: 22px;
+    font-size: 15px;
+  }
+  .label h1 {
+    top: 46px;
+  }
+  .label .by {
+    top: 128px;
+    font-size: 15px;
+  }
+  .pop {
+    gap: 7px;
+  }
+  .pop i {
+    width: 22px;
+    height: 18px;
+  }
+  .pct {
+    top: 164px;
+  }
+  .ribbon {
+    top: calc(var(--wy) + var(--wr) + 252px);
+  }
+  #bow {
+    top: calc(27% + 92px + 267px);
+    transform: scale(0.85);
+  }
+  #open {
+    top: calc(27% + 92px + 322px);
+  }
+  .corner {
+    width: 44px;
+    height: 44px;
+  }
+  .board::before {
+    inset: 18px;
+  }
+  html.colo #stage {
+    transform: translate(0, calc(78px - 30vh)) scale(0.4) rotate(-2deg);
+  }
+  html.colo #lang {
+    display: none;
+  }
+  #colophon .txt {
+    left: 18px;
+    right: 18px;
+    width: auto;
+    top: 53vh;
+    bottom: 14px;
+    max-height: none;
+    transform: none;
+  }
+  #colophon h4 {
+    font-size: 17px;
+    margin: 14px 0 4px;
+  }
+  #colophon h4 b {
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  #colophon h2 {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  html[lang] #colophon p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+}
+@media (min-width: 761px) and (max-height: 899px) {
+  #cover {
+    --wy: min(31%, calc(100% - 469px - var(--wr)));
+  }
+  #bow {
+    top: calc(var(--wy) + var(--wr) + 315px);
+  }
+  #open {
+    top: calc(var(--wy) + var(--wr) + 380px);
+  }
+}
+@media (min-width: 761px) and (max-height: 760px) {
+  #cover {
+    --wr: 92px;
+  }
+}
+@media (max-width: 760px) and (max-height: 760px) {
+  #cover {
+    --wy: min(27%, calc(100% - 411px - var(--wr)));
+  }
+  #bow {
+    top: calc(var(--wy) + var(--wr) + 267px);
+  }
+  #open {
+    top: calc(var(--wy) + var(--wr) + 322px);
+  }
+  html.colo #stage {
+    transform: translate(0, calc(60px - 30vh)) scale(0.4) rotate(-2deg);
+  }
+}
+@media (min-width: 761px) and (max-height: 899px), (max-width: 760px) and (max-height: 760px) {
+  #cover .foot {
+    bottom: 14px;
+    font-size: 0;
+  }
+  #cover .foot br {
+    display: none;
+  }
+  #cover .foot button {
+    font-size: 15px;
+    margin-top: 0;
+  }
+}
+@media (max-height: 520px) {
+  #cover {
+    --wr: 58px;
+    --wy: 84px;
+  }
+  html[lang] .label {
+    top: calc(var(--wy) + var(--wr) + 14px);
+    height: 104px;
+    width: min(520px, 80vw);
+  }
+  .board.l .label {
+    right: calc(0.2vw - min(260px, 40vw));
+  }
+  .board.r .label {
+    left: calc(0.2vw - min(260px, 40vw));
+  }
+  .label::before {
+    inset: 7px;
+  }
+  html[lang] .label .k {
+    top: 11px;
+    font-size: 12px;
+  }
+  html[lang] .label h1 {
+    top: 26px;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  html[lang] .label .by {
+    top: 64px;
+    font-size: 13px;
+  }
+  html[lang] .pct {
+    top: 84px;
+    font-size: 10px;
+  }
+  .pop {
+    gap: 5px;
+  }
+  .pop i {
+    width: 16px;
+    height: 13px;
+  }
+  .ring {
+    border-width: 9px;
+  }
+  .ribbon {
+    top: calc(var(--wy) + var(--wr) + 124px);
+    height: 22px;
+  }
+  html[lang] #bow {
+    top: calc(var(--wy) + var(--wr) + 135px);
+    transform: scale(0.6);
+  }
+  html.opening #bow {
+    transform: translateY(-30px) rotate(30deg) scale(0.4);
+  }
+  html[lang] #open {
+    top: calc(var(--wy) + var(--wr) + 172px);
+  }
+  html[lang] #open .tag {
+    font-size: 15px;
+    padding-block: 9px 10px;
+  }
+  html[lang] #cover .foot {
+    display: none;
+  }
+  .board::before {
+    inset: 14px;
+  }
+  .corner {
+    width: 36px;
+    height: 36px;
+  }
+  #lang {
+    top: 14px;
+    inset-inline-end: 150px;
+    padding: 5px 11px 6px;
+    font-size: 13px;
+  }
+  html:not(.open) #lang {
+    inset-inline-end: 16px;
+  }
+  html[lang] .half.top {
+    height: 118px;
+  }
+  .half.top .art {
+    max-height: 100px;
+    max-width: 60%;
+  }
+  .fold {
+    width: min(560px, 80vw);
+  }
+  html[lang] .half.bot {
+    padding: 12px 20px 14px;
+  }
+  html[lang] .half.bot h3 {
+    font-size: 21px;
+    margin: 4px 0 6px;
+  }
+  html[lang] .half.bot p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  html[lang] #colophon h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  html[lang] #colophon p {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 6px;
+  }
+  html[lang] #colophon .txt {
+    width: 44vw;
+    right: 3%;
+    max-height: 80vh;
+  }
+  #colophon h4 {
+    font-size: 16px;
+    margin: 12px 0 4px;
+  }
+  html.colo #stage {
+    transform: translate(-25vw, 0) scale(0.42) rotate(-2deg);
+  }
+  html.colo #lang {
+    display: none;
+  }
+  #hint {
+    display: none;
+  }
+  #clues {
+    top: 12px;
+    padding: 4px 8px;
+  }
+  #clues .slots i {
+    width: 20px;
+    height: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01s !important;
+    animation: none !important;
+  }
+}

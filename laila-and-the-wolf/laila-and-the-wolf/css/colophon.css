@@ -1,0 +1,132 @@
+#colophon {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: #ddd0b6 var(--rag) 0 0/256px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#colophon .txt {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(560px, 40vw);
+  max-height: 86vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  padding-inline-end: 14px;
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity 0.5s 0.35s;
+}
+#colophon .txt::-webkit-scrollbar {
+  width: 6px;
+}
+#colophon .txt::-webkit-scrollbar-thumb {
+  background: rgba(42, 36, 32, 0.25);
+  border-radius: 3px;
+}
+#colophon h4 {
+  font: 700 22px/1.3 var(--pix);
+  color: var(--spark-d);
+  margin: 22px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#colophon h4 b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--spark);
+  color: #fff;
+  font-size: 15px;
+}
+#colophon .story p {
+  margin-bottom: 10px;
+}
+#colophon p.fin {
+  text-align: center;
+  font-weight: 700;
+  margin: 18px 0;
+}
+html #colophon p.credit {
+  font-size: 15px;
+  opacity: 0.75;
+  border-top: 1px dashed rgba(42, 36, 32, 0.3);
+  padding-top: 10px;
+}
+#colophon p.credit + p.credit {
+  border: 0;
+  padding-top: 0;
+}
+#colophon h2 {
+  font: 700 38px/1.25 var(--pix);
+  margin-bottom: 8px;
+}
+html[lang='en'] #colophon h2 {
+  font-weight: 600;
+  font-size: 34px;
+}
+#colophon h2 i {
+  font-style: normal;
+  color: var(--spark-d);
+}
+#colophon p {
+  font: 400 19px/1.7 var(--hand);
+  margin-bottom: 12px;
+}
+#colophon p em {
+  font-style: normal;
+  color: var(--spark-d);
+  font-weight: 700;
+}
+#colophon .x2 {
+  position: absolute;
+  inset-inline-end: 28px;
+  top: 20px;
+  z-index: 2;
+}
+html.colo #colophon {
+  opacity: 1;
+  pointer-events: auto;
+}
+html.colo #colophon .txt {
+  opacity: 1;
+}
+html.colo #stage {
+  transform: translate(-21vw, 0) scale(0.5) rotate(-2.2deg);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 14px #f6efe1,
+    0 24px 50px rgba(40, 25, 10, 0.35);
+  z-index: 31;
+}
+html.colo .chrome,
+html.colo #frame {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+.pc {
+  position: fixed;
+  z-index: 32;
+  width: 60px;
+  height: 60px;
+  background: #2a2420;
+  opacity: 0;
+  transition: opacity 0.4s 0.5s;
+  pointer-events: none;
+}
+html.colo .pc {
+  opacity: 0.88;
+}
+html.nogl .pc {
+  display: none;
+}

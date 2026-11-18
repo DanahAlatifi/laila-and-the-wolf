@@ -1,0 +1,126 @@
+:root {
+  color-scheme: only light;
+  --ink: #2a2420;
+  --cream: #f4ecdc;
+  --paper: #eadfca;
+  --spark: #d9363e;
+  --spark-d: #a8222b;
+  --cloth: #1f3d2b;
+  --cloth-d: #16301f;
+  --gold: #d9b46a;
+  --c0: #d9a441;
+  --c1: #2f5a3c;
+  --c2: #5f8fbf;
+  --c3: #c27a4a;
+  --c4: #2c3a63;
+  --c5: #a85a6a;
+  --ui: #f7f0e2;
+  --pix: 'Reem Kufi', 'Segoe UI', Tahoma, sans-serif;
+  --hand: 'Marhey', 'Segoe UI', Tahoma, sans-serif;
+}
+html[lang='en'] {
+  --pix: 'Pixelify Sans', ui-monospace, monospace;
+  --hand: 'Gaegu', 'Comic Sans MS', cursive;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  color-scheme: only light;
+  forced-color-adjust: none;
+  height: 100%;
+  overflow: hidden;
+  background: #24261e;
+  color: var(--ui);
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: var(--hand);
+  overscroll-behavior: none;
+  touch-action: none;
+  -webkit-font-smoothing: antialiased;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  transform-origin: 50% 50%;
+  transition:
+    transform 0.9s cubic-bezier(0.7, 0, 0.2, 1),
+    border-radius 0.9s;
+  will-change: transform;
+  overflow: hidden;
+  background: #24261e;
+}
+#gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+#still {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 70% at 50% 45%, #5b8a48, #2f5a3c 70%, #16301f);
+  display: none;
+}
+#still p {
+  position: absolute;
+  left: 50%;
+  bottom: 118px;
+  transform: translateX(-50%);
+  background: var(--cream);
+  color: var(--ink);
+  font: 700 19px/1.5 var(--hand);
+  padding: 10px 18px;
+  border-radius: 3px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  text-align: center;
+  width: max-content;
+  max-width: 86vw;
+}
+#still h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 38%;
+  text-align: center;
+  font: 700 clamp(40px, 7vw, 84px)/1 var(--pix);
+  color: var(--cream);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+html.nogl #still {
+  display: block;
+}
+html.nogl #gl {
+  display: none;
+}
+html.nogl #chap,
+html.nogl #zoom,
+html.nogl #hint,
+html.nogl #clues {
+  display: none;
+}
+#frame {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 40;
+}
